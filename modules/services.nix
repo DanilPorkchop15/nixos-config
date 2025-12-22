@@ -21,18 +21,17 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  programs.niri = {
-    package = pkgs.niri;
-    enable = true;
-  };
-
   services.gnome.gnome-keyring.enable = true;
 
+  # pipewire (media server)
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
   };
+
+  # v2raya (vpn)
+  services.v2raya.enable = true;
 
   virtualisation.docker = {
     enable = true;

@@ -10,15 +10,9 @@
     enableZshIntegration = true;
   };
 
-  # noisetorch (mic filter)
-  programs.noisetorch.enable = true;
-
   # zsh (shell)
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "sudo" "docker" ];

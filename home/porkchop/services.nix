@@ -1,9 +1,6 @@
 { pkgs, ...}:
 
 {
-  # v2raya (vpn)
-  services.v2raya.enable = true;
-
   # swayidle (commands on idle)
   services.swayidle = {
     enable = true;

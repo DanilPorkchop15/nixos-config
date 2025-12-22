@@ -3,10 +3,12 @@
 {
   imports =
     [
-      ./home
-      ./modules
       ./hardware-configuration.nix
+      ./modules
+      ./home
     ];
+
+  nixpkgs.config.allowUnfree = true;
 
   time.timeZone = "Europe/Moscow";
 
