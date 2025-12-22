@@ -1,19 +1,12 @@
 { pkgs, ... }:
 
 {
-  # waybar (topbar provider)
-  home.file.".config/waybar/config.jsonc".source = ./.config/waybar/config.jsonc;
-  home.file.".config/waybar/style.css".source = ./.config/waybar/style.css;
-
-  # mako (notifications)
-  home.file.".config/mako/config.ini".source = ./.config/mako/config.ini;
-
-  # fuzzel (menu provider)
-  home.file.".config/fuzzel/fuzzel.ini".source = ./.config/fuzzel/config.ini;
-
-  # swaylock (lockscreen)
-  home.file.".config/swaylock/config".source = ./.config/swaylock/config.ini;
-
-  # ghostty (terminal)
-  home.file.".config/ghostty/config.ini".source = ./.config/ghostty/config.ini;
+  home.file = {
+    ".config/ghostty/config".source = ./dotfiles/ghostty/config.ini;
+    ".config/mako/config".source = ./dotfiles/mako/config.ini;
+    ".config/swaylock/config".source = ./dotfiles/swaylock/config.ini;
+    ".config/waybar/config.jsonc".source = ./dotfiles/waybar/config.jsonc;
+    ".config/waybar/style.css".source = ./dotfiles/waybar/style.css;
+    ".config/fuzzel/fuzzel.ini".source = ./dotfiles/fuzzel/fuzzel.ini;
+  };
 }
