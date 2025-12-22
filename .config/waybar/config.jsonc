@@ -1,0 +1,99 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 4,
+  
+  "modules-left": ["niri/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "tray",
+    "mpris",
+    "network", 
+    "bluetooth",
+    "niri/language", 
+    "backlight",
+    "pulseaudio", 
+    "battery" 
+  ],
+
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": "○"
+    },
+    "on-click": "activate",
+    "sort-by-number": true
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%Y-%m-%d | %H:%M}"
+  },
+
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["󰃞", "󰃟", "󰃠"]
+  },
+
+  "network": {
+    "format-wifi": "{icon}",
+    "format-disconected": "󰤭",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ],
+    "format-ethernet": "󰌗",
+    "tooltip-format": "{icon} {essid} ({signalStrength}%))",
+    "on-click": "~/.local/bin/nmtui || ghostty -e nmtui &"
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+        "headphones": "",
+        "default": ["", "", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  },
+
+  "niri/language": {
+    "format": "{}",
+    "format-en": "us",
+    "format-ru": "ru"
+   },
+
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "max-length": 30,
+    "scroll-step": 1,
+    "scroll-interval": 50,
+    "enable-scroll": true,
+    "player-icons": {
+      "default": "",
+      "mpv": "󰝚"
+     },
+     "status-icons": {
+     "paused": "▶",
+     "on-click": "playerctl play-pause",
+     "on-click-right": "playerctl next",
+     "on-click-middle": "playerctl previous",
+     "tooltip-format": "{title} — {artist}\n{album}\n{player_name}"
+    }
+  },
+  "bluetooth": {
+    "format": "",
+    "format-connected-battery": " ({device_battery_percentage}%)",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "ghostty -e bluetuith &"
+  } 
+}
