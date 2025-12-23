@@ -72,10 +72,11 @@ ___
 │   ├── networking.nix         # Сеть (NetworkManager, hostname, timezone)
 │   ├── packages.nix           # Системные пакеты (environment.systemPackages)
 │   ├── programs.nix           # Системные программы (niri, firefox, zsh и т.д.)
-│   └── services.nix           # Системные сервисы (pipewire, sddm, docker, v2raya и т.д.)
+│   ├── services.nix           # Системные сервисы (pipewire, sddm, docker, v2raya и т.д.)
+│   └── swap.nix               # Настройка /swapfile
 └── README.md                  # Документация проекта: структура, как применять, особенности
 ```
 ___
 #### TODO: 
--[ ] починить тему (в трее вейбара менюшки приложений светлые)
--[ ] разобраться, почему стим и майнкрафт 1.12.2 не запускаются
+- [ ] починить тему (в трее вейбара менюшки приложений светлые)
+- [ ] разобраться, почему стим и майнкрафт 1.12.2 не запускаются
