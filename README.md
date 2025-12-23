@@ -30,6 +30,10 @@ sudo nixos-rebuild switch --flake .#paragon
 sudo nixos-rebuild switch --rollback
 ```
 ___
+## Niri
+Чтобы посмотреть основные кейбинды, нажмите `super + shift + /`.
+Чтобы полностью посмотреть конфиг со всеми биндами, читайте файл `/home/porkchop/dotfiles/niri/config.kdl` репозитория или `~/.config/niri/config.kdl` уже установленной системы.
+___
 ## Дерево файлов:
 ```
 .
