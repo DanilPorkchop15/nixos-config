@@ -17,9 +17,9 @@ ___
 Также в бут конфиге указан nodev grub, что тоже может не подойти многим
 ___
 ## Билд
-Сгенерируйте `hardware-configuration.nix` в корне проекта командой:
+Обязательно сгенерируйте СВОЙ `hardware-configuration.nix` в корне проекта командой:
 ```shell
-nixos-generate-config --dir .
+nixos-generate-config --show-hardware-config > hardware-configuration.nix
 ```
 Для установки системы из конфигурации используйте команду:
 ```shell
