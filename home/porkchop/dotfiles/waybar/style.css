@@ -12,7 +12,7 @@ tooltip {
 }
 
 window#waybar {
-  background: #1e1e2e;
+  background: rgba(30, 30, 46, 0.98);
   border-bottom: 4px solid #89b4fa;
 }
 

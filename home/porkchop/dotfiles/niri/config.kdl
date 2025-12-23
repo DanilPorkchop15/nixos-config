@@ -349,6 +349,10 @@ window-rule {
     clip-to-geometry true
 }
 
+window-rule {
+    draw-border-with-background false
+}
+
 cursor {
     xcursor-theme "Bibata-Modern-Classic"
     xcursor-size 24
