@@ -61,16 +61,7 @@ ___
 │       ├── scripts.nix        # Пользовательские скрипты (nmtui, powermenu, wall-next, wlsunset-toggle)
 │       ├── services.nix       # Пользовательские сервисы (swayidle и др.)
 │       ├── theme.nix          # Тема GTK, курсор (Bibata), цвета
-│       ├── wallpapers         # Папка с обоями для скрипта wall-next
-│       │   ├── biking-sunset.jpg
-│       │   ├── Clearnight.jpg
-│       │   ├── Cloudsday.jpg
-│       │   ├── evening-sky.png
-│       │   ├── flowers-21.png
-│       │   ├── kaiju.png
-│       │   ├── nix-black-4k.png
-│       │   ├── Rainnight.jpg
-│       │   ├── street.png
+│       ├── wallpapers         # Папка с обоями для скрипта wall-next, после установки она находится в ~/Pictures/wallpapers
 │       │   └── wallpaper.jpg
 │       └── xdg.nix            # Настройка MIME-типов, xdg-portal и дефолтных приложений
 ├── modules                    # Системные NixOS-модули
