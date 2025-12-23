@@ -34,5 +34,7 @@
     loupe
     gnome.gvfs
     bluetuith
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
   ];
 }
