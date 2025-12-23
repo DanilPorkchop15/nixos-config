@@ -17,6 +17,10 @@ ___
 Также в бут конфиге указан nodev grub, что тоже может не подойти многим
 ___
 ## Билд
+Сгенерируйте `hardware-configuration.nix` в корне проекта командой:
+```shell
+nixos-generate-config --dir .
+```
 Для установки системы из конфигурации используйте команду:
 ```shell
 sudo nixos-rebuild switch --flake .#paragon
@@ -24,6 +28,57 @@ sudo nixos-rebuild switch --flake .#paragon
 При необходимости всегда можно переключиться на старую деривацию системы в бут меню, либо откатившись командой:
 ```shell
 sudo nixos-rebuild switch --rollback
+```
+___
+## Дерево файлов:
+```
+.
+├── configuration.nix          # Корневой файл NixOS: импортирует все модули и home-manager конфиг
+├── flake.lock                 # Фиксация точных версий всех зависимостей (nixpkgs, home-manager, niri-flake и т.д.)
+├── flake.nix                  # Основной flake: inputs, outputs, определение nixosConfigurations.paragon
+├── hardware-configuration.nix # Автогенерируемый файл с аппаратной конфигурацией системы
+├── home                       # Конфигурация Home Manager
+│   ├── default.nix            # Импорт конфигурации пользователя porkchop
+│   └── porkchop               # Пользовательская конфигурация porkchop
+│       ├── default.nix        # Главный файл пользователя: stateVersion + импорты всех HM-модулей
+│       ├── dotfiles           # Исходники всех конфигурационных файлов приложений
+│       │   ├── fastfetch/config.jsonc  # Конфигурация fastfetch (в стиле Omarchy, адаптировано под NixOS)
+│       │   ├── fuzzel/fuzzel.ini       # Конфигурация fuzzel (лаунчер/меню)
+│       │   ├── ghostty/config          # Конфигурация терминала Ghostty
+│       │   ├── mako/config             # Конфигурация уведомлений mako
+│       │   ├── niri/config.kdl         # Основная конфигурация Niri (Wayland-композитор)
+│       │   ├── swaylock/config         # Конфигурация экрана блокировки swaylock-effects
+│       │   └── waybar                  # Конфигурация панели Waybar
+│       │       ├── config.jsonc
+│       │       └── style.css
+│       ├── dotfiles.nix       # Модуль: копирует всю папку dotfiles в ~/.config/ (recursive)
+│       ├── packages.nix       # Пакеты пользователя (home.packages)
+│       ├── programs.nix       # Включение и настройка программ (zsh, zoxide, fastfetch и т.д.)
+│       ├── scripts.nix        # Пользовательские скрипты (nmtui, powermenu, wall-next, wlsunset-toggle)
+│       ├── services.nix       # Пользовательские сервисы (swayidle и др.)
+│       ├── theme.nix          # Тема GTK, курсор (Bibata), цвета
+│       ├── wallpapers         # Папка с обоями для скрипта wall-next
+│       │   ├── biking-sunset.jpg
+│       │   ├── Clearnight.jpg
+│       │   ├── Cloudsday.jpg
+│       │   ├── evening-sky.png
+│       │   ├── flowers-21.png
+│       │   ├── kaiju.png
+│       │   ├── nix-black-4k.png
+│       │   ├── Rainnight.jpg
+│       │   ├── street.png
+│       │   └── wallpaper.jpg
+│       └── xdg.nix            # Настройка MIME-типов, xdg-portal и дефолтных приложений
+├── modules                    # Системные NixOS-модули
+│   ├── boot.nix               # Настройки загрузчика (GRUB, EFI)
+│   ├── default.nix            # Импорт всех системных модулей (для удобства)
+│   ├── fonts.nix              # Системные шрифты (JetBrains Mono Nerd Font и др.)
+│   ├── hardware.nix           # Аппаратные настройки (graphics, bluetooth и т.д.)
+│   ├── networking.nix         # Сеть (NetworkManager, hostname, timezone)
+│   ├── packages.nix           # Системные пакеты (environment.systemPackages)
+│   ├── programs.nix           # Системные программы (niri, firefox, zsh и т.д.)
+│   └── services.nix           # Системные сервисы (pipewire, sddm, docker, v2raya и т.д.)
+└── README.md                  # Документация проекта: структура, как применять, особенности
 ```
 ___
 #### TODO: 
