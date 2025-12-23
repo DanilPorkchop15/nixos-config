@@ -1,31 +1,22 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  # gtk (theme for some of apps) [ TODO: not working properly ]
-  gtk = {
+  imports = [
+    inputs.catppuccin.homeModules.catppuccin
+  ];
+
+  catppuccin = {
     enable = true;
+    flavor = "mocha";
+    accent = "blue";
 
-    theme = {
-      name = "Catppuccin-Mocha-Standard-Blue-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "blue" ];
-        variant = "mocha";
-        size = "standard";
-      };
-    };
-
-    cursorTheme = {
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
-      size = 20;
-    };
-
-    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
-    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+    waybar.enable = true;
   };
 
-  home.sessionVariables = {
-    GTK_THEME = "Catppuccin-Mocha-Standard-Blue-Dark";
+  gtk.cursorTheme = {
+    name = "Bibata-Modern-Classic";
+    package = pkgs.bibata-cursors;
+    size = 20;
   };
 
   home.pointerCursor = {
@@ -34,12 +25,5 @@
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
     size = 24;
-  };
-
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      gtk-theme = "Catppuccin-Mocha-Standard-Blue-Dark";
-    };
   };
 }

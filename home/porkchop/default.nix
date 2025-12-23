@@ -7,7 +7,7 @@
     shell = pkgs.zsh;
   };
 
-  home-manager.users.porkchop = { pkgs, ... }: {
+  home-manager.users.porkchop = { pkgs, inputs, ... }: {
     imports = [
       ./dotfiles.nix
       ./packages.nix
