@@ -12,6 +12,7 @@
       ./dotfiles.nix
       ./packages.nix
       ./programs.nix
+      ./scripts.nix
       ./services.nix
       ./theme.nix
       ./xdg.nix

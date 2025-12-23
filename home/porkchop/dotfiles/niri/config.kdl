@@ -272,7 +272,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-spawn-sh-at-startup "swww-daemon && ~/.local/bin/wall-next"
+spawn-sh-at-startup "swww-daemon && niri-wall-next"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -374,7 +374,7 @@ binds {
     Mod+Space hotkey-overlay-title="App Menu" { spawn "fuzzel"; }
     Mod+Shift+B hotkey-overlay-title="Firefox" { spawn "firefox"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn-sh "swaylock --clock --indicator --indicator-radius=200"; }
-    Mod+P hotkey-overlay-title="Power Menu" {spawn "~/.local/bin/powermenu"; }
+    Mod+P hotkey-overlay-title="Power Menu" {spawn "niri-powermenu"; }
 
 // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
 // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -630,8 +630,8 @@ binds {
 // Powers off the monitors. To turn them back on, do any input like
 // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
-    Mod+Ctrl+Space { spawn "~/.local/bin/wall-next"; }
+    Mod+Ctrl+Space { spawn "niri-wall-next"; }
     Mod+D { spawn "nautilus"; }
-    Mod+N { spawn "~/.local/bin/wlsunset-toggle"; }
-    Mod+I { spawn-sh "~/.local/bin/nmtui || ghostty -e nmtui &"; }
+    Mod+N { spawn "niri-wlsunset-toggle"; }
+    Mod+I { spawn-sh "niri-nmtui || ghostty -e nmtui &"; }
 }

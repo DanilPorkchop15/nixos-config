@@ -48,7 +48,7 @@
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ],
     "format-ethernet": "󰌗",
     "tooltip-format": "{icon} {essid} ({signalStrength}%))",
-    "on-click": "~/.local/bin/nmtui || ghostty -e nmtui &"
+    "on-click": "niri-nmtui || ghostty -e nmtui &"
   },
 
   "pulseaudio": {
