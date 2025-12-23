@@ -25,3 +25,7 @@ sudo nixos-rebuild switch --flake .#paragon
 ```shell
 sudo nixos-rebuild switch --rollback
 ```
+___
+#### TODO: 
+-[ ] починить тему (в трее вейбара менюшки приложений светлые)
+-[ ] разобраться, почему стим и майнкрафт 1.12.2 не запускаются
