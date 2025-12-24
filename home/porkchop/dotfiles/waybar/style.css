@@ -1,94 +1,118 @@
 * {
-  font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 13px;
-  color: #cdd6f4;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    color: #cdd6f4;
 }
 
 .modules-left {
-  margin-left: 8px;
+    margin-left: 16px;
 }
 
 .modules-right {
-  margin-right: 8px;
+    margin-right: 16px;
 }
 
 tooltip {
-  border: 2px solid #505050;
-  border-radius: 0;
-  padding: 6px 12px;
+    border: 2px solid #505050;
+    border-radius: 0;
+    padding: 6px 12px;
 }
 
 window#waybar {
-  background: rgba(30, 30, 46, 0.98);
-  border-bottom: 4px solid #89b4fa;
+    background: rgba(30, 30, 46, 0.98);
+    border-bottom: 4px solid #89b4fa;
 }
 
 #workspaces button {
-  color: #7289ad;
-  background: transparent;
-  border: 0;
-  padding: 0 4px;
+    color: #7289ad;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin-right: 12px;
 }
 
 #workspaces button:hover {
-  border: none;
-  box-shadow: none;
-  background-color: rgba(0,0,0,0);
+    border: none;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #workspaces button.active {
-  color: #adccff;
+    color: #adccff;
 }
 
 #workspaces button.empty {
-  opacity: 0.5;
+    opacity: 0.5;
 }
 
-#clock { color: #f9e2af; font-weight: bold; }
-#battery { color: #a6e3a1; }
-#network { color: #89b4fa; }
-#pulseaudio { color: #f38ba8; }
-#backlight { color: #dbc179; }
-#language, #network, #pulseaudio, #backlight, #battery, #group-tray-expender, #bluetooth, #tray, #custom-expand-icon { margin: 0 8px; }
+#clock {
+    color: #f9e2af;
+    font-weight: bold;
+}
+
+#battery {
+    color: #a6e3a1;
+}
+
+#network {
+    color: #89b4fa;
+}
+
+#pulseaudio {
+    color: #f38ba8;
+}
+
+#backlight {
+    color: #dbc179;
+}
+
+#language, #network, #pulseaudio, #backlight, #battery, #group-tray-expender, #bluetooth, #tray {
+    margin: 0 8px;
+}
+
+#custom-expand-icon {
+    font-size: 10px;
+    margin: 0;
+}
 
 #bluetooth.connected {
-  color: #89b4fa;
+    color: #89b4fa;
 }
 
 #bluetooth.on {
-  color: #cdd6f4;
+    color: #cdd6f4;
 }
 
 #bluetooth.disabled {
-  color: #6c7086;
+    color: #6c7086;
 }
 
 #mpris {
-  margin: 6px 0 10px 0;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: #cdd6f4;
-  min-width: 200px;
+    margin: 6px 0 10px 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #cdd6f4;
+    min-width: 200px;
 }
 
 #mpris.playing {
-  color: #a6e3a1;
+    color: #a6e3a1;
 }
 
 #mpris.paused {
-  color: #f9e2af;
+    color: #f9e2af;
 }
 
 #mpris.stopped {
-  color: #6c7086; 
+    color: #6c7086;
 }
 
 #tray menu {
-  background: rgba(30, 30, 46, 0.98);
-  border: 4px solid #89b4fa;
-  border-radius: 0;
-  padding: 0;
+    background: rgba(30, 30, 46, 0.98);
+    border: 4px solid #89b4fa;
+    border-radius: 0;
+    padding: 0;
 }
 
 #tray menu menuitem:hover {
-  background: #89b4fa;
+    background: #89b4fa;
 }
