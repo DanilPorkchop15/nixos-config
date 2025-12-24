@@ -2,7 +2,14 @@
   font-family: "JetBrainsMono Nerd Font", monospace;
   font-size: 13px;
   color: #cdd6f4;
-  padding: 0 8px;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
 }
 
 tooltip {
@@ -33,12 +40,16 @@ window#waybar {
   color: #adccff;
 }
 
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
 #clock { color: #f9e2af; font-weight: bold; }
 #battery { color: #a6e3a1; }
 #network { color: #89b4fa; }
 #pulseaudio { color: #f38ba8; }
 #backlight { color: #dbc179; }
-#language { padding: 0; margin: 0; }
+#language, #network, #pulseaudio, #backlight, #battery, #group-tray-expender, #bluetooth, #tray, #custom-expand-icon { margin: 0 8px; }
 
 #bluetooth.connected {
   color: #89b4fa;
@@ -69,12 +80,6 @@ window#waybar {
 
 #mpris.stopped {
   color: #6c7086; 
-}
-
-#tray {
-  padding: 0;
-  margin: 6px 0 10px 0;
-  background-color: rgba(255, 255, 255, 0.05);
 }
 
 #tray menu {
