@@ -7,7 +7,7 @@
   "modules-left": ["niri/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [
-    "tray",
+    "group/tray-expander",
     "mpris",
     "network", 
     "bluetooth",
@@ -43,17 +43,22 @@
   },
 
   "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
     "format-wifi": "{icon}",
-    "format-disconected": "󰤭",
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ],
-    "format-ethernet": "󰌗",
-    "tooltip-format": "{icon} {essid} ({signalStrength}%))",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
     "on-click": "niri-nmtui || ghostty -e nmtui &"
   },
 
   "pulseaudio": {
     "format": "{volume}% {icon}",
-    "format-muted": "",
+    "format-muted": "",
     "format-icons": {
         "headphones": "",
         "default": ["", "", ""]
@@ -69,23 +74,41 @@
    },
 
   "mpris": {
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "max-length": 30,
-    "scroll-step": 1,
-    "scroll-interval": 50,
-    "enable-scroll": true,
+    "format": "{status_icon}  {dynamic}",
+    "format-paused": "{status_icon}  <i>{dynamic}</i>",
+    "max-length": 50,
+    "interval": 1,
+    "escape": true,
+    "tooltip": true,
+    "tooltip-format": "{player}\n{title}\n{artist}\n\n{position} / {length}\n{album}",
+
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl position 10+",
+    "on-click-middle": "playerctl position 10-",
+    "on-scroll-up": "playerctl previous",
+    "on-scroll-down": "playerctl next",
+
     "player-icons": {
-      "default": "",
-      "mpv": "󰝚"
-     },
-     "status-icons": {
-     "paused": "▶",
-     "on-click": "playerctl play-pause",
-     "on-click-right": "playerctl next",
-     "on-click-middle": "playerctl previous",
-     "tooltip-format": "{title} — {artist}\n{album}\n{player_name}"
-    }
+        "default": "󰎈",
+        "spotify": "󰓇",
+        "firefox": "󰈹",
+        "mpv": "󰐹",
+        "vlc": "󰕼",
+        "chromium": "󰊯",
+        "brave": "󰖟"
+    },
+    "status-icons": {
+        "playing": "󰏤",
+        "paused": "󰐊",
+        "stopped": "󰓛"
+    },
+
+   "dynamic-order": ["title", "artist"],
+    "dynamic-len": 35,
+    "dynamic-separator": " • ",
+    "title-len": 30,
+    "artist-len": 20,
+    "album-len": 30
   },
   "bluetooth": {
     "format": "",
@@ -95,5 +118,21 @@
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "on-click": "ghostty -e bluetuith &"
-  } 
+  },
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
+    },
+    "modules": ["custom/expand-icon", "tray"]
+  },
+  "tray": {
+    "icon-size": 12,
+    "spacing": 17
+  },
+  "custom/expand-icon": {
+    "format": "",
+    "tooltip": false
+  }
 }
