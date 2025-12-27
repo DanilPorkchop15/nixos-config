@@ -55,7 +55,7 @@ window#waybar {
 }
 
 #network {
-    color: #89b4fa;
+    color: #94e2d5;
 }
 
 #pulseaudio {
@@ -80,7 +80,7 @@ window#waybar {
 }
 
 #bluetooth.on {
-    color: #cdd6f4;
+    color: #74c7ec;
 }
 
 #bluetooth.disabled {
