@@ -418,12 +418,16 @@ binds {
 
     Mod+Left  { focus-column-left; }
     Mod+Ctrl+Left  { focus-column-left; }
+    Mod+Alt+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
     Mod+Ctrl+Down  { focus-workspace-down; }
+    Mod+Alt+Down  { focus-workspace-down; }
     Mod+Up    { focus-window-up; }
     Mod+Ctrl+Up    { focus-workspace-up; }
+    Mod+Alt+Up    { focus-workspace-up; }
     Mod+Right { focus-column-right; }
     Mod+Ctrl+Right { focus-column-right; }
+    Mod+Alt+Right { focus-column-right; }
     Mod+H     { focus-column-left; }
     Mod+J     { focus-window-down; }
     Mod+K     { focus-window-up; }
